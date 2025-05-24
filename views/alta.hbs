@@ -37,14 +37,21 @@
         <p class="text">
           Por favor completa este formulario para agregar nuevos artículos.
         </p>
-        <form action="#">
+        <form action="/api/productos" method="POST">
           <div class="inputBox">
             <input
               type="text"
               name="product_name"
               class="product_name"
-              placeholder="Nombre del Artículo"
+              placeholder="Nombre del Artículo!"
             />
+          </div>
+          <div class="inputBox">
+            <textarea
+              name="product_description"
+              class="product_description"
+              placeholder="Descripción del Artículo"
+            ></textarea>
           </div>
           <div class="inputBox">
             <input
@@ -56,76 +63,11 @@
           </div>
           <div class="inputBox">
             <input
-              type="number"
-              name="product_stock"
-              class="product_stock"
-              placeholder="Stock del Artículo"
-            />
-          </div>
-          <div class="inputBox">
-            <input
               type="text"
-              name="product_brand"
-              class="product_brand"
-              placeholder="Marca del Artículo"
+              name="product_image_url"
+              class="product_image_url"
+              placeholder="URL de la Imagen del Artículo"
             />
-          </div>
-          <div class="inputBox">
-            <input
-              type="text"
-              name="product_category"
-              class="product_category"
-              placeholder="Categoría del Artículo"
-            />
-          </div>
-          <div class="inputBox">
-            <input
-              type="text"
-              name="product_short_description"
-              class="product_short_description"
-              placeholder="Descripción Corta del Artículo"
-            />
-          </div>
-          <div class="inputBox">
-            <textarea
-              name="product_long_description"
-              class="product_long_description"
-              placeholder="Descripción Larga del Artículo"
-            ></textarea>
-          </div>
-          <div class="inputBox">
-            <input
-              type="text"
-              name="product_fee"
-              class="product_fee"
-              placeholder="Envío sin Cargo"
-            />
-          </div>
-          <div class="inputBox">
-            <input
-              type="number"
-              name="product_age_from"
-              class="product_age_from"
-              placeholder="Edad desde"
-            />
-          </div>
-          <div class="inputBox">
-            <input
-              type="number"
-              name="product_age_to"
-              class="product_age_to"
-              placeholder="Edad hasta"
-            />
-          </div>
-          <div>
-            <label
-              for="product_photo"
-              class="product_photo"
-            >
-              Foto del Artículo:
-            </label>
-            <br>
-            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
           </div>
           <br>
           <button class="btn">Agregar Artículo</button>
