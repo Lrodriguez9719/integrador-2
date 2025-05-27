@@ -5,13 +5,20 @@ const express = require('express');
 const router = express.Router();
 
 // Importamos el controlador
-const { indexApp, altaApp, contactoApp, nosotrosApp } = require('../controllers/pagesController');
+const {
+  indexApp,
+  altaApp,
+  contactoApp,
+  nosotrosApp,
+  altaProductoApp
+} = require('../controllers/pagesController');
 
 // Definimos las rutas
 router.get('/', indexApp);
 router.get('/alta', altaApp);
 router.get('/contacto', contactoApp);
 router.get('/nosotros', nosotrosApp);
+router.post("/submit", altaProductoApp)
 
 // Exportamos el router
 module.exports = router;
