@@ -1,92 +1,9 @@
-const indexApp = (req, res) => {
-  res.render('index', {
-    productos: [
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-      {
-        id: 1,
-        nombre: 'Collar de Oro',
-        imagen: "./images/producto1.jpg",
-        descripcion: "Collar de Oro Dorado",
-        precio: 650,
-      },
-    ]
-  });
+const Producto = require('../models/productoModel');
+
+const indexApp = async (req, res) => {
+  const productos = await Producto.find();
+
+  res.render('index', { productos });
 }
 
 const altaApp = (req, res) => {

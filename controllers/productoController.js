@@ -17,35 +17,36 @@ const obtenerProductos = (req, res) => {
 };
 
 const añadirProducto = async (req, res) => {
-  const { nombre, imagen, descripcion, precio } = req.body;
-  console.log("Datos recibidos:", req.body);
+  const {
+    product_name,
+    product_description,
+    product_price,
+    product_image_url
+  } = req.body;
 
-  /*
-
-  const datosProducto = {
-    nombre,
-    imagen,
-    descripcion,
-    precio,
-  };
-
-  if (!nombre || !imagen || !descripcion || !precio) {
+  if (!product_name || !product_description || !product_price || !product_image_url) {
     return res.status(400).json({
       status: "error",
       message: "Faltan datos del producto",
     });
   }
 
-  
+  const datosProducto = {
+    nombre: product_name,
+    imagen: product_image_url,
+    descripcion: product_description,
+    precio: product_price,
+  };
+
+  console.log(datosProducto);
+
   try {
     const nuevoProducto = new Producto(datosProducto);
     await nuevoProducto.save();
 
-    res.status(201).json({
-      status: "success",
-      message: "Producto añadido correctamente",
-      data: nuevoProducto,
-    });
+    const productos = await Producto.find();
+
+    res.render("index", { productos });
   } catch (error) {
     console.error("Error al añadir el producto:", error);
     res.status(500).json({
@@ -53,7 +54,6 @@ const añadirProducto = async (req, res) => {
       message: "Error al añadir el producto",
     });
   }
-    */
 }
 
 module.exports = {
