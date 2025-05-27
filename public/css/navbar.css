@@ -42,6 +42,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 1em;
+  align-items: center;
 }
 
 nav ul a {
@@ -57,6 +58,20 @@ nav ul a:hover {
 
 .active {
   border-bottom: 2px solid #ffffff;
+}
+
+nav ul li .cart {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+nav ul li .cart:hover {
+  color: black;
+}
+
+nav ul li ion-icon {
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 600px) {
