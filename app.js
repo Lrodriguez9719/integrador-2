@@ -6,7 +6,7 @@ const path = require("path"); // librería para trabajar con rutas
 
 // Importamos las rutas
 const routes = require('./routes/pagesRouter'); // Importamos las rutas de las páginas
-const routesProducto = require('./routes/productoRouter'); // Importamos las rutas de productos
+const apiRoutes = require('./routes/apiRouter'); // Importamos las rutas de productos
 
 // Creamos el servidor
 const app = express();
@@ -24,7 +24,7 @@ hbs.registerPartials(path.join(__dirname, "views/partials")); // configuramos la
 
 // Configuramos las rutas
 app.use('/', routes);
-app.use("/api", routesProducto);
+app.use("/api", apiRoutes);
 
 // Middleware para errores
 // Middleware 404 al final de todas tus rutas
