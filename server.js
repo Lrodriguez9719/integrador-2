@@ -6,7 +6,7 @@ const app = require('./app');
 
 // Importamos el puerto y la uri de la base de datos
 const PORT = process.env.PORT || 3000;
-const MONGO_URI = process.env.MONGO_ATLAS;
+const MONGO_URI = process.env.MONGO_URI;
 
 // Importamos la conexión a la base de datos
 const connectDB = require('./conexion/mongoConnection');
